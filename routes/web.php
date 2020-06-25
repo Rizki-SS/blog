@@ -22,6 +22,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
+    Route::get('/', function () {
+        return view('dashboard');
+    });
     Route::resource('roles', 'RoleController');
     Route::resource('users', 'UserController');
 });
