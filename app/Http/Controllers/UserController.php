@@ -25,8 +25,10 @@ class UserController extends Controller
 
     public function index(Request $request)
     {
-        $data = User::orderBy('id', 'DESC')->paginate(5);
-        return view('users.index', compact('data'))->with('i', ($request->input('page', 1) - 1) * 5);
+        // $data = User::orderBy('id', 'DESC')->paginate(5);
+        // return view('users.index', compact('data'))->with('i', ($request->input('page', 1) - 1) * 5);
+        $data = User::all();
+        return view('users.index', compact('data'));
     }
 
     public function create()
@@ -92,7 +94,8 @@ class UserController extends Controller
         }
 
         if ($request->hasFile('avatar')) {
-            $imageName = 'avatar id - ' . $id;
+            $ext = $request->avatar->extension();
+            $imageName = 'avatar id - ' . $id . "." . $ext;
             $request->avatar->move(public_path('storage/files/shares/avatar/'), $imageName);
             //update avatar
             $user->avatar = $imageName;
@@ -105,8 +108,9 @@ class UserController extends Controller
 
         $user->assignRole($request->input('roles'));
 
-        return redirect()->route('users.index')
-            ->with('success', 'User updated');
+        return redirect()->route('users.index')->with('success', 'User updated');
+
+        //i don't know what i think
     }
 
     public function destroy($id)

@@ -56,7 +56,8 @@
     <tbody>
     @foreach ($data as $key => $user)
       <tr>
-        <td>{{ ++$i }}</td>
+        {{-- <td>{{ ++$i }}</td> --}}
+        <td>{{ $user->id }}</td>
         <td>{{ $user->name }}</td>
         <td>{{ $user->email }}</td>
         <td><img src="/storage/files/shares/avatar/{{ $user->avatar }}" width="100px"></td>
@@ -80,7 +81,8 @@
     </table>
 
    </div>
-    {!! $data->render() !!}
+   //pagnition
+    {{-- {!! $data->render() !!} --}}
 </div>
 @endsection
 
