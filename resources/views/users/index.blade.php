@@ -48,6 +48,7 @@
       <th>No</th>
       <th>Name</th>
       <th>Email</th>
+      <th>avatar</th>
       <th>Roles</th>
       <th width="280px">Action</th>
       </tr>
@@ -58,6 +59,7 @@
         <td>{{ ++$i }}</td>
         <td>{{ $user->name }}</td>
         <td>{{ $user->email }}</td>
+        <td><img src="/storage/files/shares/avatar/{{ $user->avatar }}" width="100px"></td>
         <td>
           @if(!empty($user->getRoleNames()))
             @foreach($user->getRoleNames() as $v)

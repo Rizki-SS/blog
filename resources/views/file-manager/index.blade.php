@@ -26,7 +26,7 @@
 @section('content')
 <div class="card">
     <div class="card-body">
-        <iframe class="w-100 border-none" style="height:500px" src="/admin/filemanager"></iframe>
+        <iframe class="w-100 border-none" style="height:600px" src="/admin/filemanager"></iframe>
     </div>
 </div>
 @endsection

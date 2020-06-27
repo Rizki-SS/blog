@@ -34,7 +34,7 @@
         @endif
 
 
-        <table class="table table-bordered" id="table-data">
+        <table class="table" id="table-data">
         <thead>
             <tr>
             <th>No</th>

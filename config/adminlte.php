@@ -247,6 +247,11 @@ return [
             'url'         => 'admin/roles',
             'icon'        => 'far fa-fw fa-file',
         ],
+        [
+            'text'        => 'media',
+            'url'         => 'admin/files',
+            'icon'        => 'far fa-fw fa-file',
+        ],
         // ['header' => 'account_settings'],
         [
             'text' => 'profile',

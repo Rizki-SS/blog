@@ -27,6 +27,9 @@
 @section('content')
 <div class="card">
     <div class="card-body">
+        <div class="row text-center">
+            <img src="/storage/files/shares/avatar/{{ $user->avatar }}" class="m-auto" width="150" alt="" srcset="">
+        </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">

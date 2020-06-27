@@ -40,8 +40,15 @@
         @endif
 
 
-        {!! Form::model($user, ['method' => 'PATCH','route' => ['users.update', $user->id]]) !!}
+        {!! Form::model($user, ['method' => 'PATCH','route' => ['users.update', $user->id],'files' => true]) !!}
         <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>avatar:</strong>
+                    <img src="/storage/files/shares/avatar/{{ $user->avatar }}" class="m-auto" width="100" alt="" srcset="">
+                    {!! Form::file('avatar', null, array('placeholder' => 'image','class' => 'form-control')) !!}
+                </div>
+            </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Name:</strong>

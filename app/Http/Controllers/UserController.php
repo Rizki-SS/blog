@@ -74,18 +74,33 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,email,' . $id,
             'password' => 'same:confirm-password',
-            'roles' => 'required'
+            'roles' => 'required',
+            'avatar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
+
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
 
         $input = $request->all();
         if (!empty($input['password'])) {
             $input['password'] = Hash::make($input['password']);
+            //update password
+            $user->password = $input['password'];
         } else {
             $input = Arr::except($input, array('password'));
         }
 
-        $user = User::find($id);
-        $user->update($input);
+        if ($request->hasFile('avatar')) {
+            $imageName = 'avatar id - ' . $id;
+            $request->avatar->move(public_path('storage/files/shares/avatar/'), $imageName);
+            //update avatar
+            $user->avatar = $imageName;
+        };
+
+        $user->save();
+
+        // $user->update($input);
         DB::table('model_has_roles')->where('model_id', $id)->delete();
 
         $user->assignRole($request->input('roles'));
