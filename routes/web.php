@@ -27,6 +27,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     });
     Route::resource('roles', 'RoleController');
     Route::resource('users', 'UserController');
+    Route::get('files', function () {
+        return view("file-manager.index");
+    });
 });
 
 Route::group(['prefix' => 'admin/filemanager', 'middleware' => ['auth']], function () {
