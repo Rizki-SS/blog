@@ -9,6 +9,7 @@ use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Gate;
 
 class UserController extends Controller
 {
@@ -76,19 +77,13 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,email,' . $id,
             'password' => 'same:confirm-password',
-            'roles' => 'required',
+            // 'roles' => 'required',
             'avatar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-
-        $user = User::find($id);
-        $user->name = $request->name;
-        $user->email = $request->email;
 
         $input = $request->all();
         if (!empty($input['password'])) {
             $input['password'] = Hash::make($input['password']);
-            //update password
-            $user->password = $input['password'];
         } else {
             $input = Arr::except($input, array('password'));
         }
@@ -97,20 +92,18 @@ class UserController extends Controller
             $ext = $request->avatar->extension();
             $imageName = 'avatar id - ' . $id . "." . $ext;
             $request->avatar->move(public_path('storage/files/shares/avatar/'), $imageName);
-            //update avatar
-            $user->avatar = $imageName;
+            $input['avatar'] = $imageName;
         };
 
-        $user->save();
+        $user = User::find($id);
+        $user->update($input);
 
-        // $user->update($input);
-        DB::table('model_has_roles')->where('model_id', $id)->delete();
-
-        $user->assignRole($request->input('roles'));
+        if (Gate::allows('role-edit') == true) {
+            DB::table('model_has_roles')->where('model_id', $id)->delete();
+            $user->assignRole($request->input('roles'));
+        };
 
         return redirect()->route('users.show', $id)->with('success', 'User updated');
-
-        //i don't know what i think
     }
 
     public function destroy($id)
