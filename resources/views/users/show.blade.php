@@ -16,7 +16,10 @@
       <div class="col text-right margin-tb">
         <br>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}"> Edit</a>
+            @can('user-list')
+                <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
+            @endcan
         </div>
       </div>
     </div>
