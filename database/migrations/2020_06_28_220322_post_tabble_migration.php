@@ -18,11 +18,11 @@ class PostTabbleMigration extends Migration
             $table->String('title');
             $table->integer('author_id');
             $table->integer('category_id');
-            $table->String('seo_title');
-            $table->longText('body');
-            $table->String('image');
-            $table->String('meta_description');
-            $table->String('meta_keyword');
+            $table->String('seo_title')->nullable();
+            $table->longText('body')->nullable();
+            $table->String('image')->nullable();
+            $table->String('meta_description')->nullable();
+            $table->String('meta_keyword')->nullable();
             $table->String('status');
             $table->timestamps();
         });
