@@ -1,5 +1,5 @@
 just starting to make.
-Only finished user, role and media manager
+Only finished user, role, category and media manager
 
 "require": {
     "php": "^7.2.5",
