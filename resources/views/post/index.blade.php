@@ -57,7 +57,7 @@
                         <td>{{ $key->updated_at }}</td>
                         <td>{{ $key->status }}</td>
                         <td>
-                            <a class="btn btn-info" href="{{ route('posts.show',$key->id) }}">Show</a>
+                            <a class="btn btn-info" href="{{ route('single_post',[$key->created_at->year,$key->created_at->month,$key->url]) }}">Show</a>
                             @can('post-edit')
                                 <a class="btn btn-primary" href="{{ route('posts.edit',$key->id) }}">Edit</a>
                             @endcan

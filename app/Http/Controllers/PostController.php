@@ -46,6 +46,10 @@ class PostController extends Controller
             $input['image'] = 'default.jpg';
         };
 
+        $input['url'] = str_replace(' ', '-', $input['title']);
+
+        // return $input;
+
         $Post = Post::create($input);
 
         return redirect()->route('posts.index')->with('success', 'Post created');
@@ -73,7 +77,7 @@ class PostController extends Controller
             $input['image'] = $imageName;
         }
 
-        // return $input;
+        $input['url'] = str_replace(' ', '-', $input['title']);
 
         $post = Post::find($id);
         $post->update($input);

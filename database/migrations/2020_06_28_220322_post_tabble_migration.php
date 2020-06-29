@@ -16,6 +16,7 @@ class PostTabbleMigration extends Migration
         Schema::create('post', function (Blueprint $table) {
             $table->id();
             $table->String('title');
+            $table->string('url');
             $table->integer('author_id');
             $table->integer('category_id');
             $table->String('seo_title')->nullable();
