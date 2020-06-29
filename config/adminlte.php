@@ -471,7 +471,7 @@ return [
                 [
                     'type' => 'js',
                     'asset' => false,
-                    'location' => 'public\vendor\adminlte\dist\plugin\summernote\summernote-bs4.js',
+                    'location' => '\vendor\adminlte\dist\plugin\summernote\summernote-bs4.js',
                 ],
             ],
         ],
