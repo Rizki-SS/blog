@@ -19,7 +19,7 @@ class PostTabbleMigration extends Migration
             $table->integer('author_id');
             $table->integer('category_id');
             $table->String('seo_title');
-            $table->String('body');
+            $table->longText('body');
             $table->String('image');
             $table->String('meta_description');
             $table->String('meta_keyword');
