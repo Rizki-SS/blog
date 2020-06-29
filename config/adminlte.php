@@ -259,6 +259,11 @@ return [
             'url'   => 'admin/categories',
             'can'   => 'category-list'
         ],
+        [
+            'text'  => 'post',
+            'url'   => 'admin/posts',
+            'can'   => 'post-list'
+        ]
         // ['header' => 'account_settings'],
         // [
         //     'text' => 'profile',
@@ -386,17 +391,17 @@ return [
                 [
                     'type' => 'js',
                     'asset' => false,
-                    'location' => '//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js',
-                ],
-                [
-                    'type' => 'js',
-                    'asset' => false,
-                    'location' => '//cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js',
+                    'location' => '/vendor/adminlte/dist/plugin/datatables/jquery.dataTables.min.js',
                 ],
                 [
                     'type' => 'css',
                     'asset' => false,
-                    'location' => '//cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css',
+                    'location' => '/vendor/adminlte/dist/plugin/datatables-bs4/css/dataTables.bootstrap4.min.css',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => '/vendor/adminlte/dist/plugin/datatables-bs4/js/dataTables.bootstrap4.min.js',
                 ],
             ],
         ],
@@ -405,14 +410,14 @@ return [
             'active' => false,
             'files' => [
                 [
-                    'type' => 'js',
-                    'asset' => false,
-                    'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js',
-                ],
-                [
                     'type' => 'css',
                     'asset' => false,
-                    'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.css',
+                    'location' => '\vendor\adminlte\dist\plugin\select2-bootstrap4-theme\select2-bootstrap4.min.css',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => '\vendor\adminlte\dist\plugin\select2\js\select2.js',
                 ],
             ],
         ],
@@ -451,6 +456,22 @@ return [
                     'type' => 'js',
                     'asset' => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',
+                ],
+            ],
+        ],
+        [
+            'name' => 'summer_note',
+            'active' => false,
+            'files' => [
+                [
+                    'type' => 'css',
+                    'asset' => false,
+                    'location' => '\vendor\adminlte\dist\plugin\summernote\summernote-bs4.css',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => 'public\vendor\adminlte\dist\plugin\summernote\summernote-bs4.js',
                 ],
             ],
         ],

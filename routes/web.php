@@ -28,6 +28,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::resource('roles', 'RoleController');
     Route::resource('users', 'UserController');
     Route::resource('categories', 'CategoryController');
+    Route::resource('posts', 'postController');
     Route::get('files', 'FilesController@index')->name('Files Manager');
 });
 
