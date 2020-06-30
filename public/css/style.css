@@ -1,0 +1,44 @@
+.view {
+    background: url("/storage/files/shares/background.jpg")no-repeat center center;
+    background-size: cover;
+}
+
+@media (min-width: 768px) {
+    .view {
+        overflow: visible;
+        margin-top: -56px;
+    }
+}
+
+.navbar {
+    z-index: 1;
+}
+
+.navbar {
+    background-color: transparent;
+}
+
+.top-nav-collapse {
+    background-color: #2b333f;
+    padding-top: 12px!important;
+    padding-bottom: 12px !important;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        background-color: #2b333f;
+    }
+}
+
+html,
+body,
+header,
+.view {
+    height: 100%;
+}
+
+.image-content {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
