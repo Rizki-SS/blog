@@ -1,5 +1,14 @@
-just starting to make.
-Only finished user, role, category and media manager
+just starting to make.<br>
+Only finished user, role, category and media manager<br>
+
+finished create homepage for user/guest. still need to make some improvements.<br>
+for image asset, I uploaded via the media manager. The following structure is the default:
+-/shared folder<br>
+&nbsp -/avatar (for user avatar)<br>
+&nbsp &nbsp - default.png (image default of background)<br> 
+&nbsp -/post (for image asset post)<br>
+&nbsp &nbsp - default.jpg (image default of post)<br> 
+&nbsp -background.jpg (image of background)<br>
 
 "require": {
     "php": "^7.2.5",
