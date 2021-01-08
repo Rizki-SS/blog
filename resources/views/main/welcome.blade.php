@@ -124,6 +124,13 @@
         </div>
     </main>
 
+
+    {{-- <div class="container">
+        @foreach (File::glob('storage/files/shares/post/*') as $file)
+            <img src="{{ $file }}" width="20px">
+        @endforeach 
+    </div> --}}
+
     <div class="container-fluid unique-color">
         <div class="container p-3">
             <form method="post" action="#" class="form-row align-items-center">
