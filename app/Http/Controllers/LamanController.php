@@ -10,10 +10,10 @@ class LamanController extends Controller
 
     function __construct()
     {
-        // $this->middleware('permission:laman-list|laman-create|laman-edit|laman-delete', ['only' => ['index', 'store']]);
-        // $this->middleware('permission:laman-create', ['only' => ['create', 'store']]);
-        // $this->middleware('permission:laman-edit', ['only' => ['edit', 'update']]);
-        // $this->middleware('permission:laman-delete', ['only' => ['destroy']]);
+        $this->middleware('permission:laman-list|laman-create|laman-edit|laman-delete', ['only' => ['index', 'store']]);
+        $this->middleware('permission:laman-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:laman-edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:laman-delete', ['only' => ['destroy']]);
     }
     /**
      * Display a listing of the resource.

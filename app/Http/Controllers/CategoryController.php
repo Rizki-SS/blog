@@ -52,7 +52,7 @@ class CategoryController extends Controller
             'name' => 'required',
         ]);
 
-        $data = Category::find(1);
+        $data = Category::find($id);
         $data->name = $request->name;
         $data->save();
 
