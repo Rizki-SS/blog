@@ -4,17 +4,17 @@ finished user, role, category, post, page and media manager<br>
 finished create homepage for user/guest. still need to make some improvements.<br>
 for image asset, I uploaded via the media manager. The following structure is the default:
 -/shared folder<br>
-&nbsp -/avatar (for user avatar)<br>
-&nbsp &nbsp - default.png (image default of background)<br> 
-&nbsp -/post (for image asset post)<br>
-&nbsp &nbsp - default.jpg (image default of post)<br> 
-&nbsp -background.jpg (image of background)<br>
+&nbsp;-/avatar (for user avatar)<br>
+&nbsp;&nbsp;- default.png (image default of background)<br> 
+&nbsp;-/post (for image asset post)<br>
+&nbsp;&nbsp;- default.jpg (image default of post)<br> 
+&nbsp;-background.jpg (image of background)<br>
 
-Featur
-&nbsp Crud post, Category, And Page
-&nbsp media manager
-&nbsp Multi User
-&nbsp autentikasi dan autorisasi
+Feature
+- Crud post, Category, And Page
+- media manager
+- Multi User
+- autentikasi dan autorisasi
 
 "require": {
     "php": "^7.2.5",
