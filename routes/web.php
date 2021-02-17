@@ -29,6 +29,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::resource('users', 'UserController');
     Route::resource('categories', 'CategoryController');
     Route::resource('posts', 'postController');
+    Route::resource('lamans', 'LamanController');
     Route::get('files', 'FilesController@index')->name('Files Manager');
 });
 
@@ -39,3 +40,4 @@ Route::group(['prefix' => 'admin/filemanager', 'middleware' => ['auth']], functi
 Route::get('/', 'mainController@main')->name('welcome');
 Route::get('/post', 'mainController@index')->name('allpost');
 Route::get('/{y}/{m}/{title}', 'mainController@post')->name('single_post');
+Route::get('/{title}', 'mainController@laman')->name('laman_page');

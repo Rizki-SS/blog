@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Laman;
 use App\Post;
 use Illuminate\Http\Request;
 
@@ -23,7 +24,24 @@ class mainController extends Controller
             ->whereYear('created_at', $y)
             ->first();
 
+        if ($data->status != 'publish') {
+            return redirect('/404');
+        }
+
         return view('main.single_page', compact('data'));
+    }
+
+    public function laman($title)
+    {
+        $data = Laman::where('url', $title)
+            ->first();
+
+        if ($data != null) {
+            if ($data->status == 'publish') {
+                return view('main.laman', compact('data'));
+            }
+        }
+        return redirect('/');
     }
 
     public function main()

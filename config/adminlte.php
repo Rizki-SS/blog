@@ -254,6 +254,7 @@ return [
             'icon'  => 'far fa-fw fa-file',
             'can'   =>  'file-index'
         ],
+        ['header' => 'Content'],
         [
             'text'  => 'category',
             'url'   => 'admin/categories',
@@ -263,6 +264,11 @@ return [
             'text'  => 'post',
             'url'   => 'admin/posts',
             'can'   => 'post-list'
+        ],
+        [
+            'text'  => 'Laman',
+            'url'   => 'admin/lamans',
+            // 'can'   => 'laman-list'
         ]
         // ['header' => 'account_settings'],
         // [

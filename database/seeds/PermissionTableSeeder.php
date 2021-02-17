@@ -33,7 +33,12 @@ class PermissionTableSeeder extends Seeder
             'post-list',
             'post-edit',
             'post-create',
-            'post-delete'
+            'post-delete',
+
+            'laman-list',
+            'laman-edit',
+            'laman-create',
+            'laman-delete'
         ];
 
         foreach ($permissions as $permission) {

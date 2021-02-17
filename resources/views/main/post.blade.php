@@ -14,7 +14,7 @@
                 <div class="col-lg-9">
                     @foreach ($post as $item)
                         <div class="row">
-                        <div class="card mb-3 ml-3 mr-3">
+                        <div class="card mb-3 ml-3 mr-3 w-100">
                             <div class="card-body text-left">
                                 <div class="row">
                                     <div class="col-sm">
