@@ -1,5 +1,5 @@
 just starting to make.<br>
-Only finished user, role, category and media manager<br>
+finished user, role, category, post, page and media manager<br>
 
 finished create homepage for user/guest. still need to make some improvements.<br>
 for image asset, I uploaded via the media manager. The following structure is the default:
@@ -9,6 +9,12 @@ for image asset, I uploaded via the media manager. The following structure is th
 &nbsp -/post (for image asset post)<br>
 &nbsp &nbsp - default.jpg (image default of post)<br> 
 &nbsp -background.jpg (image of background)<br>
+
+Featur
+&nbsp Crud post, Category, And Page
+&nbsp media manager
+&nbsp Multi User
+&nbsp autentikasi dan autorisasi
 
 "require": {
     "php": "^7.2.5",
